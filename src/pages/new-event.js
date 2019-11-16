@@ -10,7 +10,6 @@ import {
   Upload,
   TimePicker,
 } from 'antd';
-import { Storage } from 'aws-amplify';
 
 import moment from 'moment';
 
@@ -44,11 +43,11 @@ function NewEventForm(props) {
   };
 
   const handleUpload = async () => {
-    const response = await Storage.put(fileToUpload.name, fileToUpload);
-    const s3ImageUrl = await Storage.get(response.key, { level: 'public' });
-    setImageUrl(s3ImageUrl);
-    setUploading(false);
-    return s3ImageUrl;
+    // const response = await Storage.put(fileToUpload.name, fileToUpload);
+    // const s3ImageUrl = await Storage.get(response.key, { level: 'public' });
+    // setImageUrl(s3ImageUrl);
+    // setUploading(false);
+    // return s3ImageUrl;
   }
 
   useEffect(() => {
